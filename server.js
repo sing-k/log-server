@@ -61,6 +61,13 @@ app.get('/logout', (req, res) => {
 // WebSocket 연결 설정
 io.on('connection', (socket) => {
 
+    fs.readFile(logFilePath, 'utf8', (err, data) => {
+        if(err) {
+            console.log(err);
+            return;
+        }
+        socket.emit('logUpdated', data);
+    })
   // 로그 파일 변경 감지
   fs.watch(logFilePath, (eventType, filename) => {
     if (eventType === 'change') {

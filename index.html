@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <title>Log Viewer</title>
 <script src="/socket.io/socket.io.js"></script>
+<style>
+  #log {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-top: 20px;
+  }
+  #logHeader {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const socket = io();
@@ -15,6 +27,9 @@
 </head>
 <body>
 <h1>Server Log</h1>
+<div id="logHeader">
+  Log Format: [Date] [Level] [Thread] [Logger.Method.Line] - Message
+</div>
 <pre id="log">Loading logs...</pre>
 <a href="/logout">Logout</a>
 </body>

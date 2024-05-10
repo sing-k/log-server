@@ -1,0 +1,17 @@
+{
+  "name": "log-viewer-app",
+  "version": "1.0.0",
+  "description": "A simple log viewer app with real-time updates",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Namju Kim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.0",
+    "express-session": "^1.17.3"
+  }
+}
+

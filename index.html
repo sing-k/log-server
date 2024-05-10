@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Log Viewer</title>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const socket = io();
+    socket.on('logUpdated', function(data) {
+      document.getElementById('log').textContent = data;
+    });
+  });
+</script>
+</head>
+<body>
+<h1>Server Log</h1>
+<pre id="log">Loading logs...</pre>
+<a href="/logout">Logout</a>
+</body>
+</html>
+
